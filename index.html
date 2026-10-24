@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ventas Pro | Sistema de ventas</title>
+</head>
+<body>
+<header><div class="bar">
+  <div class="logo">Ventas Pro</div>
+  <nav id="menu" aria-label="Menú principal">
+    <button data-v="inicio" class="on">Inicio</button>
+    <button data-v="ventas">Ventas</button>
+    <button data-v="productos">Productos</button>
+    <button data-v="historia">Historia</button>
+  </nav>
+</div></header>
+<main>
+
+<section id="inicio" class="on">
+  <div class="hero">
+    <h1>Vende más, con todo en un solo lugar.</h1>
+    <p>SE VENDEN VIEJAS A 4 PESOS.</p>
+    <button class="btn" data-go="ventas">Registrar una venta</button>
+  </div>
+  <div class="grid" style="margin-bottom:24px">
+    <div class="card"><span>Ventas registradas</span><b id="k-ventas">0</b></div>
+    <div class="card"><span>Total vendido</span><b id="k-total">S/ 0</b></div>
+    <div class="card"><span>Productos en catálogo</span><b id="k-prod">0</b></div>
+  </div>
+  <div class="grid">
+    <button class="card go" data-go="ventas"><h2>Ventas</h2>Registra y consulta cada venta.</button>
+    <button class="card go" data-go="productos"><h2>Productos</h2>Revisa precios y stock.</button>
+    <button class="card go" data-go="historia"><h2>Historia</h2>Conoce quiénes somos.</button>
+  </div>
+</section>
+
+<section id="ventas">
+  <h2>Ventas</h2>
+  <form id="f-venta">
+    <label>Cliente<input id="v-cli" required placeholder="Nombre del cliente"></label>
+    <label>Producto<select id="v-prod"></select></label>
+    <label>Cantidad<input id="v-cant" type="number" min="1" value="1" required></label>
+    <button class="btn" type="submit">Guardar venta</button>
+  </form>
+  <p class="msg" id="v-msg" role="status"></p>
+  <div class="tbl"><table>
+    <thead><tr><th>N°</th><th>Fecha</th><th>Cliente</th><th>Producto</th><th class="n">Cant.</th><th class="n">Total</th></tr></thead>
+    <tbody id="t-ventas"></tbody>
+  </table></div>
+</section>
+<section id="productos">
+  <h2>Productos</h2>
+  <div class="tools">
+    <input id="buscar" type="search" placeholder="Buscar producto o categoría" aria-label="Buscar producto">
+  </div>
+  <div class="tbl"><table>
+    <thead><tr><th>Código</th><th>Producto</th><th>Categoría</th><th class="n">Precio</th><th class="n">Stock</th></tr></thead>
+    <tbody id="t-prod"></tbody>
+  </table></div>
+</section>
